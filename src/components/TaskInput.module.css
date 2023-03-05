@@ -1,0 +1,47 @@
+.FormWrapper {
+  gap: 5px;
+  width: 100%;
+  height: 38px;
+  display: flex;
+  align-items: center;
+}
+
+.Input {
+  flex: 1;
+  height: 100%;;
+  color: white;
+  border-radius: 3px;
+  padding: 0.2em 0.5em;
+  background: rgba(153, 153, 157, 0.26);
+}
+
+.Input:focus{
+    /* border: 2px solid rgb(242, 180, 65); */
+    border: 2px solid rgb(116, 252, 182);
+}
+
+.Input::placeholder {
+  color: rgb(244, 235, 235);
+}
+
+.SubmitButton {
+  height: 100%;
+  padding: 12px;
+  border-radius: 2px;
+  background-color: rgba(177, 172, 177, 0.264);
+}
+
+.SubmitButton svg {
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: all 0.25s;
+}
+
+.SubmitButton:hover svg{
+    transform: rotate(95deg) scale(1.2);
+}
+
+.SubmitButton:active svg path{
+    fill: rgb(190, 241, 169);
+}

@@ -1,0 +1,28 @@
+.ItemWrapper {
+  border-radius: 3px;
+  padding:  0.8em 0.5em;
+  background-color: #26212d;
+  line-height: 1.5em;
+}
+
+.ButtonWrapper {
+  margin-top: 0.8em;
+}
+
+.ButtonWrapper button {
+  width: 6em;
+  border-radius: 3px;
+  text-align: center;
+  padding: 0.3em 0em;
+  margin-right: 0.5em;
+  color: rgb(255, 255, 255);
+}
+
+.ButtonWrapper button:nth-child(2) {
+  background-color: rgb(255, 100, 92);
+}
+
+.ButtonWrapper button:nth-child(1) {
+  color: rgb(24, 23, 23);
+  background-color: rgb(116, 252, 182);
+}
