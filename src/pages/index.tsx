@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import { motion } from "framer-motion";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
 import TodoItem from "@/components/TodoItem";
 import TaskInput from "@/components/TaskInput";
-
-const inter = Inter({ subsets: ["latin"] });
+import { AnimatePresence, MotionConfig } from "framer-motion";
 
 let defaultTodoItems: TodoItem[] = [
   {
@@ -44,7 +44,7 @@ export default function Home() {
 
   let createItem = (item: TodoItem) => {
     setTodoItems((items) => {
-      return [...items, item];
+      return [item, ...items];
     });
   };
 
@@ -65,13 +65,24 @@ export default function Home() {
           <div className={styles.HorizontalLine}></div>
         </div>
         <div className={styles.ItemsContainer}>
-          {todoItems.map((item) => (
-            <TodoItem
-              item={item}
-              completeItem={completeItem}
-              deleteItem={deleteItem}
-            ></TodoItem>
-          ))}
+          <AnimatePresence mode="popLayout">
+            {todoItems.map((item) => (
+              <motion.div
+                layout
+                layoutScroll
+                key={item.Id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <TodoItem
+                  item={item}
+                  completeItem={completeItem}
+                  deleteItem={deleteItem}
+                ></TodoItem>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       </main>
     </>

@@ -19,6 +19,7 @@ function TodoItem({
   completeItem,
   deleteItem,
 }: TodoItemProps) {
+  console.log(item.Id);
   return (
     <div className={`${className} ${styles.ItemWrapper}`}>
       <p>{item.Task}</p>
