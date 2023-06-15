@@ -1,13 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
-import { AnimatePresence, MotionConfig } from "framer-motion";
+import TaskInput from "@/components/TaskInput";
+// import { AnimatePresence, MotionConfig } from "framer-motion";
 
 
 export default function Home() {
+
 
   return (
     <>
@@ -22,6 +24,8 @@ export default function Home() {
           <h1>Todo-Willaim</h1>
         </div>
         <div className={styles.Input}>
+          <TaskInput></TaskInput>
+      
         </div>
         <div className={styles.ItemsContainer}>
         </div>
