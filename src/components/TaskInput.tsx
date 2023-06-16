@@ -17,10 +17,9 @@ export default function TaskInput({ createItem, className }: TaskInputProps) {
 
   const onSubmit = (data: TaskInputForm) => {
     let newItem: Todo = {
-        stuff :" Hello " 
-    //   Task: data.task,
-    //   Id: new Date().getTime().toString(),
-    //   completed: false
+      Task: data.task,
+      Id: new Date().getTime().toString(),
+      completed: false
     };
 
     createItem(newItem);
